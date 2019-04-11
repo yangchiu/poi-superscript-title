@@ -1,3 +1,4 @@
+package com.yangchiu.poi;
 import java.io.FileInputStream;
 import java.util.List;
 import java.util.Map;
@@ -75,6 +76,47 @@ public class DocxReader extends DocumentReader {
 		}
     	
     }
+	
+	protected void tagTitles(List<XWPFParagraph> list)
+    {
+		/*
+    	boolean tagOpen = false;
+    	
+    	for(XWPFParagraph paragraph : list) {
+    		
+    		XWPFRun prev = null;
+    		
+    		for(XWPFRun rn : paragraph.getRuns()) {
+    		
+    			STVerticalAlignRun.Enum type = rn.getVerticalAlignment();
+    			
+    			if(type == STVerticalAlignRun.SUPERSCRIPT) {
+    				
+    				if(tagOpen == false) {
+    					tagOpen = true;
+    					rn.setText(openSup + rn.text(), 0);
+    				}
+    				else if(tagOpen == true) {
+    					// do nothing
+    				}
+    			}
+    			else if(prev != null && type != STVerticalAlignRun.SUPERSCRIPT && tagOpen == true) {
+    				
+    				prev.setText(prev.text() + closedSup, 0);
+    				tagOpen = false;
+    			}
+    			
+    			prev = rn;
+    		}
+    		
+    		if(tagOpen == true) {
+    			prev.setText(prev.text() + closedSup, 0);
+    			tagOpen = false;
+    		}
+		}
+		*/
+    	
+    }
 
 	public static void main(String[] args) {
 		try {
@@ -86,6 +128,7 @@ public class DocxReader extends DocumentReader {
 			DocxReader reader = new DocxReader();
 			
 			reader.tagSuperscripts(paragraphList);
+			reader.tagTitles(paragraphList);
 			
 			XWPFWordExtractor ex = new XWPFWordExtractor(xdoc);
 		    System.out.println(ex.getText());

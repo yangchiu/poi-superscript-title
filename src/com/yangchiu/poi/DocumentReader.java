@@ -1,3 +1,4 @@
+package com.yangchiu.poi;
 import java.util.HashMap;
 
 public class DocumentReader {

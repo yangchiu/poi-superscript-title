@@ -10,25 +10,25 @@ import com.yangchiu.poi.common.DocumentReader;
 
 public class DocReader extends DocumentReader {
 
-	public static void main(String[] args) {
-		
-		try {
-			FileInputStream fis = new FileInputStream("test_superscript.doc");
-			HWPFDocument doc = new HWPFDocument(fis);
-			Range range = doc.getRange();
-			
-			System.out.println(range.text());
-			
-			
-			
-			doc.close();
+    public static void main(String[] args) {
+        
+        try {
+            FileInputStream fis = new FileInputStream("test_superscript.doc");
+            HWPFDocument doc = new HWPFDocument(fis);
+            Range range = doc.getRange();
+            
+            System.out.println(range.text());
+            
+            
+            
+            doc.close();
 
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		
-	}
-	
-	
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        
+    }
+    
+    
 }

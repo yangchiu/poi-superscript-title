@@ -50,8 +50,7 @@ public class DocxReader extends DocumentReader {
         //System.out.println(mapOfFontSize);
     }
     
-    public void tagSuperscripts(List<XWPFParagraph> list)
-    {
+    public void tagSuperscripts(List<XWPFParagraph> list) {
         boolean tagOpen = false;
         
         for(XWPFParagraph paragraph : list) {
@@ -127,7 +126,6 @@ public class DocxReader extends DocumentReader {
                 tagOpen = false;
             }
         }
-        
         
     }
 
